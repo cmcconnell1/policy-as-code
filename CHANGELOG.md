@@ -2,6 +2,34 @@
 
 All notable changes to the policy-as-code framework.
 
+## [Unreleased]
+
+### Added
+- GLBA compliance policies (policies/aws/compliance/glba.rego) with 10 comprehensive rules covering all 5 control areas:
+  - GLBA-SAFEGUARDS: Encryption of customer data (NPI) at rest and in transit
+  - GLBA-ACCESS: Access control, MFA, network isolation, public access blocking
+  - GLBA-MONITORING: Audit logging and CloudTrail for breach detection
+  - GLBA-VENDOR: Third-party oversight with compliance tagging for cloud vendors
+  - GLBA-BREACH: 30-day backup retention for breach investigation (2024 FTC Rule)
+- GLBA test suite (tests/aws/compliance/glba_test.rego) with 16 comprehensive test cases
+- Support for 2024 FTC Breach Notification Rule (30-day requirement for 500+ customers)
+- Data classification enforcement via tags (NPI, PII, confidential, restricted)
+- CloudTrail requirement for resources storing customer data
+- Vendor compliance tagging requirements for approved regions
+
+### Changed
+- Enhanced GLBA compliance reporting from 3 to 5 controls in compliance_report.py
+- Updated docs/guides/compliance-reporting.md with detailed GLBA section including:
+  - Enforcement agencies (FTC, OCC, Federal Reserve, CFPB)
+  - 2023 FTC Final Rule and 2024 Breach Notification Rule
+  - Expanded focus areas from 4 to 6 detailed requirements
+- Updated docs/reference/compliance-summary.md with complete GLBA control mappings
+- All GLBA controls now map to aws.compliance.glba policy package
+
+### Fixed
+- GLBA test failures by adding required vendor compliance tags and CloudTrail resources to test fixtures
+- .gitignore now properly excludes reports/compliance/ subdirectory (was only excluding files directly in reports/)
+
 ## [1.0.0] - 2025-11-20
 
 ### Fixed

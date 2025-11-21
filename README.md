@@ -148,6 +148,9 @@ make compliance-sox       # SOX compliance only
 make compliance-pci       # PCI-DSS compliance only
 make compliance-ffiec     # FFIEC compliance only
 make compliance-glba      # GLBA compliance only
+
+# for local dev/testing generate and view reports
+make compliance-reports ; for file in `ls ./reports/compliance/`; do open ./reports/compliance/$file; done
 ```
 
 See the [Compliance Reporting](#compliance-reporting) section below for detailed information about compliance frameworks and report features.

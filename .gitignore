@@ -277,6 +277,7 @@ bundle/
 reports/*.html
 reports/*.json
 reports/*.csv
+reports/compliance/
 !reports/README.md
 !reports/.gitkeep
 
