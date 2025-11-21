@@ -5,6 +5,14 @@ All notable changes to the policy-as-code framework.
 ## [Unreleased]
 
 ### Added
+- Enforcement Strategies guide (docs/guides/enforcement-strategies.md) explaining:
+  - How to integrate OPA/Rego with existing repositories
+  - How to prevent developers from bypassing policies
+  - GitHub branch protection and required status checks
+  - Terraform Cloud/Enterprise integration
+  - Service Control Policies and AWS Config enforcement
+  - Real-world example for financial institutions
+  - Defense-in-depth approach with 10 enforcement layers
 - GLBA compliance policies (policies/aws/compliance/glba.rego) with 10 comprehensive rules covering all 5 control areas:
   - GLBA-SAFEGUARDS: Encryption of customer data (NPI) at rest and in transit
   - GLBA-ACCESS: Access control, MFA, network isolation, public access blocking

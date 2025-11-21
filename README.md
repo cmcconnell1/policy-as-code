@@ -24,6 +24,7 @@ Designed for **financial services** and banking institutions, with built-in comp
 |----------|-------------|
 | [Getting Started](docs/guides/getting-started.md) | Step-by-step setup guide (no cloud credentials needed) |
 | [Quickstart Guide](docs/guides/quickstart.md) | Condensed quick reference |
+| [Enforcement Strategies](docs/guides/enforcement-strategies.md) | How to enforce policies across all projects and prevent workarounds |
 | [Compliance Reporting](docs/guides/compliance-reporting.md) | Generate SOX, PCI-DSS, FFIEC, GLBA reports |
 | [Compliance Mapping](docs/reference/compliance-mapping.md) | Policy-to-framework mappings |
 | [Compliance Summary](docs/reference/compliance-summary.md) | Compliance capabilities overview |
@@ -588,6 +589,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on:
 ### Guides
 - **[Getting Started](docs/guides/getting-started.md)** - Step-by-step setup (no cloud credentials needed)
 - **[Quickstart Guide](docs/guides/quickstart.md)** - Condensed quick reference
+- **[Enforcement Strategies](docs/guides/enforcement-strategies.md)** - Enforce policies across all projects
 - **[Compliance Reporting](docs/guides/compliance-reporting.md)** - Framework-specific reports
 
 ### Reference
