@@ -24,6 +24,10 @@ All notable changes to the policy-as-code framework.
   - 2023 FTC Final Rule and 2024 Breach Notification Rule
   - Expanded focus areas from 4 to 6 detailed requirements
 - Updated docs/reference/compliance-summary.md with complete GLBA control mappings
+- Updated README.md to include GLBA in:
+  - Project description (financial services compliance frameworks)
+  - Compliance Framework Policies section with 7 GLBA controls
+  - Project structure (compliance/ directory)
 - All GLBA controls now map to aws.compliance.glba policy package
 
 ### Fixed

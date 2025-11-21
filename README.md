@@ -2,7 +2,7 @@
 
 A comprehensive Policy-as-Code framework for enforcing security, compliance, and cost governance across AWS and Azure using **Open Policy Agent (OPA)** and **Rego**.
 
-Designed for **financial services** and banking institutions, with built-in compliance controls for SOX, PCI-DSS, and FFIEC.
+Designed for **financial services** and banking institutions, with built-in compliance controls for SOX, PCI-DSS, FFIEC, and GLBA.
 
 **Status**: Production-ready MVP with comprehensive policies and automated testing
 
@@ -166,7 +166,7 @@ policy-as-code/
 │   │   ├── security/              # Security baseline policies
 │   │   ├── tagging/               # Tagging enforcement
 │   │   ├── cost/                  # Cost governance
-│   │   └── compliance/            # SOX, PCI-DSS, FFIEC
+│   │   └── compliance/            # SOX, PCI-DSS, FFIEC, GLBA
 │   ├── azure/
 │   │   ├── security/              # Azure security policies
 │   │   ├── tagging/               # Azure tagging
@@ -269,6 +269,15 @@ Required tags for all resources (financial services):
 - GuardDuty for threat detection
 - Multi-AZ for production databases
 - Backup policy enforcement
+
+**GLBA (Gramm-Leach-Bliley Act):**
+- Encryption of customer data (NPI) at rest and in transit
+- Access control and MFA for financial systems
+- Public access blocking for customer data resources
+- Network isolation for customer data systems
+- Audit logging and CloudTrail for breach detection
+- Third-party vendor compliance tagging
+- 30-day backup retention for breach investigation (2024 FTC Rule)
 
 ---
 
