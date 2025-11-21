@@ -53,6 +53,7 @@ All notable changes to the policy-as-code framework.
 
 #### Documentation Improvements
 - **README.md**
+  - Added "Policy Engine" section explaining OPA and Rego
   - Added Step 4: "Evaluate Policies (No Credentials Needed)"
   - Updated Step 5 to clarify "Scan Live Terraform (Requires Cloud Credentials)"
   - Updated Step 6 compliance report generation instructions
@@ -60,9 +61,10 @@ All notable changes to the policy-as-code framework.
   - Added extract-violations.py to project structure
   - Updated all make target descriptions with clarity on credential requirements
   - Updated compliance report generation examples
+  - Reorganized documentation links to point to docs/ directory
   - Bumped version to 1.0.0
 
-- **GETTING_STARTED.md**
+- **docs/guides/getting-started.md** (moved from GETTING_STARTED.md)
   - Added Step 3: "Evaluate Test Fixtures" with expected output
   - Updated Step 4 to explain automatic fixture evaluation
   - Updated "Understanding What You Just Did" section
@@ -70,6 +72,7 @@ All notable changes to the policy-as-code framework.
   - Updated Common Commands section
   - Updated Troubleshooting section with evaluate-fixture examples
   - Updated Quick Reference table
+  - Removed hardcoded absolute paths
 
 - **docs/guides/compliance-reporting.md**
   - Updated Quick Start to emphasize "No Cloud Credentials Needed"
@@ -77,11 +80,17 @@ All notable changes to the policy-as-code framework.
   - Updated "Using Real Policy Violations" with extract-violations.py script
   - Added explanation of automatic fixture evaluation
 
-- **COMPLIANCE_SUMMARY.md**
+- **docs/reference/compliance-summary.md** (moved from COMPLIANCE_SUMMARY.md)
   - Updated Quick Commands to clarify no cloud credentials needed
   - Added manual workflow showing evaluate-fixture step
   - Split Example Workflow into "Quick Start" and "Production Workflow"
   - Updated all code examples to use extract-violations.py
+
+- **docs/guides/quickstart.md** (moved from QUICKSTART.md)
+  - Condensed quick reference guide
+
+- **docs/architecture/project-requirements.md** (moved from project-outline-requirement.md)
+  - Original project requirements and specifications
 
 ### Changed
 

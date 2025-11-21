@@ -67,16 +67,28 @@ The compliance reporting tool automatically generates framework-specific reports
 
 **Purpose**: Financial privacy and consumer data protection
 **Industry**: Financial services (banks, insurance, investment)
+**Enforcement**: FTC, OCC, Federal Reserve, CFPB
+**Latest Updates**: 2023 FTC Final Rule, 2024 Breach Notification Rule
+
 **Key Controls**:
-- Safeguards Rule: Protect customer information
-- Access Control: Limit access to authorized personnel
-- Monitoring: Detect unauthorized access
+- **GLBA-SAFEGUARDS**: Safeguards Rule - Administrative, technical, and physical safeguards for nonpublic personal information (NPI)
+- **GLBA-ACCESS**: Access Control - Limit access to customer information to authorized personnel only
+- **GLBA-MONITORING**: Continuous monitoring and threat detection
+- **GLBA-VENDOR**: Third-party oversight for cloud/hybrid environments
+- **GLBA-BREACH**: Breach notification (500+ customers within 30 days)
 
 **Focus Areas**:
-- Data protection safeguards
-- Access restrictions
-- Security monitoring
-- Employee training
+- **Data Encryption**: NPI must be encrypted at rest and in transit
+- **Access Controls**: Network isolation, MFA, and least privilege access
+- **Cloud/Hybrid Security**: Third-party service provider oversight for cloud vendors
+- **Audit Logging**: Required for breach detection and 30-day notification timeline
+- **Continuous Monitoring**: Adapt to emerging threats
+- **Data Residency**: Approved regions with vendor compliance documentation
+
+**2024 Breach Notification Requirements**:
+- Report breaches affecting 500+ customers within 30 days
+- Maintain audit logs and backups for investigation (minimum 30-day retention)
+- Track all access to customer data systems
 
 ## Generating Compliance Reports
 

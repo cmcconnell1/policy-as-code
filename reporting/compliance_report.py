@@ -212,32 +212,53 @@ FRAMEWORK_CONTROLS = {
     },
     "glba": {
         "name": "GLBA",
-        "description": "Gramm-Leach-Bliley Act - Financial privacy and consumer data protection",
+        "description": "Gramm-Leach-Bliley Act - Financial privacy and consumer data protection (Updated for 2023 FTC Final Rule and 2024 Breach Notification Rule)",
         "controls": {
             "GLBA-SAFEGUARDS": {
-                "title": "Safeguards Rule",
-                "description": "Protect customer information through safeguards",
+                "title": "Safeguards Rule - Data Protection",
+                "description": "Administrative, technical, and physical safeguards to protect nonpublic personal information (NPI)",
                 "policy_mappings": [
+                    "aws.compliance.glba",
                     "aws.security.s3_encryption",
                     "aws.security.kms_encryption",
                     "azure.security.storage_encryption",
                 ],
             },
             "GLBA-ACCESS": {
-                "title": "Access Control",
-                "description": "Limit access to customer information",
+                "title": "Access Control - Limit NPI Access",
+                "description": "Limit access to customer information to authorized personnel only",
                 "policy_mappings": [
+                    "aws.compliance.glba",
                     "aws.security.s3_public_access",
                     "aws.security.iam_mfa",
+                    "aws.security.ec2_security_groups",
                     "azure.security.key_vault",
+                    "azure.security.network_security",
                 ],
             },
             "GLBA-MONITORING": {
-                "title": "Security Monitoring",
-                "description": "Monitor systems and detect unauthorized access",
+                "title": "Security Monitoring - Continuous Oversight",
+                "description": "Monitor systems, detect unauthorized access, and adapt to emerging threats",
                 "policy_mappings": [
+                    "aws.compliance.glba",
                     "aws.compliance.sox",
                     "aws.compliance.ffiec",
+                ],
+            },
+            "GLBA-VENDOR": {
+                "title": "Third-Party Oversight - Cloud/Hybrid Security",
+                "description": "Ensure cloud service providers maintain adequate data protection controls",
+                "policy_mappings": [
+                    "aws.compliance.glba",
+                    "aws.tagging.required_tags",
+                ],
+            },
+            "GLBA-BREACH": {
+                "title": "Breach Notification - 30-Day Requirement",
+                "description": "Report data breaches affecting 500+ customers within 30 days (2024 FTC Rule)",
+                "policy_mappings": [
+                    "aws.compliance.glba",
+                    "aws.compliance.sox",
                 ],
             },
         },

@@ -19,13 +19,15 @@ Designed for **financial services** and banking institutions, with built-in comp
 - [Real-World Usage](#real-world-usage) - Production integration examples
 
 ### Documentation
+
 | Document | Description |
 |----------|-------------|
-| [Getting Started](GETTING_STARTED.md) | Quick start guide - no cloud credentials needed |
+| [Getting Started](docs/guides/getting-started.md) | Step-by-step setup guide (no cloud credentials needed) |
+| [Quickstart Guide](docs/guides/quickstart.md) | Condensed quick reference |
 | [Compliance Reporting](docs/guides/compliance-reporting.md) | Generate SOX, PCI-DSS, FFIEC, GLBA reports |
-| [Compliance Mapping](docs/reference/compliance-mapping.md) | Framework compliance mappings |
-| [Quickstart](QUICKSTART.md) | Condensed quick reference |
-| [Changelog](CHANGELOG.md) | Version history and changes |
+| [Compliance Mapping](docs/reference/compliance-mapping.md) | Policy-to-framework mappings |
+| [Compliance Summary](docs/reference/compliance-summary.md) | Compliance capabilities overview |
+| [Changelog](CHANGELOG.md) | Version history and release notes |
 
 ---
 
@@ -571,10 +573,18 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on:
 
 ## Support & Documentation
 
-- **Getting Started**: See [GETTING_STARTED.md](GETTING_STARTED.md) for step-by-step setup
-- **Compliance Guide**: See [docs/guides/compliance-reporting.md](docs/guides/compliance-reporting.md)
-- **Quickstart**: See [QUICKSTART.md](QUICKSTART.md) for quick reference
-- **Changelog**: See [CHANGELOG.md](CHANGELOG.md) for version history
+### Guides
+- **[Getting Started](docs/guides/getting-started.md)** - Step-by-step setup (no cloud credentials needed)
+- **[Quickstart Guide](docs/guides/quickstart.md)** - Condensed quick reference
+- **[Compliance Reporting](docs/guides/compliance-reporting.md)** - Framework-specific reports
+
+### Reference
+- **[Compliance Mapping](docs/reference/compliance-mapping.md)** - Policy-to-framework mappings
+- **[Compliance Summary](docs/reference/compliance-summary.md)** - Capabilities overview
+
+### Project Info
+- **[Changelog](CHANGELOG.md)** - Version history and release notes
+- **[Project Requirements](docs/architecture/project-requirements.md)** - Original requirements
 
 ---
 

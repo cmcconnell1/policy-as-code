@@ -9,7 +9,7 @@ Quick reference for compliance reporting capabilities in the policy-as-code fram
 | **SOX** | Sarbanes-Oxley Act - Financial reporting integrity | SOX-302, SOX-404, SOX-ITGC |
 | **PCI DSS** | Payment Card Industry - Card data security | Requirements 1, 2, 3, 7, 8, 10 |
 | **FFIEC** | Federal Financial Institutions - Cybersecurity maturity | Domains D1-D5 |
-| **GLBA** | Gramm-Leach-Bliley Act - Financial privacy | Safeguards, Access, Monitoring |
+| **GLBA** | Gramm-Leach-Bliley Act - Financial privacy (2024 Breach Rule) | Safeguards, Access, Monitoring, Vendor, Breach |
 
 ## Quick Commands
 
@@ -74,10 +74,18 @@ python reporting/compliance_report.py \
 - Monitoring and logging policies
 
 ### GLBA Controls Map To:
-- Data encryption policies
-- Access control policies
-- Key vault security policies
-- Monitoring and logging policies
+- **GLBA-SAFEGUARDS**: Data encryption policies (S3, RDS, KMS)
+- **GLBA-ACCESS**: Access control policies (IAM MFA, security groups, public access blocking)
+- **GLBA-MONITORING**: Audit logging and CloudTrail policies
+- **GLBA-VENDOR**: Cloud vendor compliance tagging and approved regions
+- **GLBA-BREACH**: Backup retention (30+ days) and audit logging for breach investigation
+
+**Key GLBA Requirements**:
+- Encryption of nonpublic personal information (NPI) at rest and in transit
+- MFA and role-based access for customer data systems
+- Continuous monitoring and threat detection
+- Third-party oversight for cloud service providers
+- 30-day breach notification for 500+ customers (2024 FTC Rule)
 
 ## Report Outputs
 
