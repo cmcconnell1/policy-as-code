@@ -1,0 +1,284 @@
+# Claude Code Global .gitignore Template
+
+# AI Assistant Configuration Files
+.continue/
+.codeium/
+.copilot/
+.tabnine/
+.aider/
+.gpt-engineer/
+.chatgpt/
+.claude/
+CLAUDE.md
+.bard/
+.ai-config/
+.llm/
+.openai/
+.anthropic/
+ai-rules
+ai-config
+.ai-rules
+
+# Secrets and Sensitive Data
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.envrc
+secrets/
+secret.json
+credentials.json
+service-account.json
+*.pem
+*.p12
+*.pfx
+*.key
+*.crt
+*.csr
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+*.ppk
+config.json
+settings.json
+database.yml
+secrets.yml
+.api-key
+.token
+api-keys.txt
+auth-token.txt
+.aws/
+.azure/
+.gcp/
+gcloud/
+
+# Development Tools & IDEs
+.vscode/
+*.code-workspace
+.idea/
+*.iml
+*.ipr
+*.iws
+*.swp
+*.swo
+*~
+
+# Operating System Files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Logs and Temporary Files
+logs/
+*.log
+tmp/
+temp/
+.tmp/
+.temp/
+*.bak
+*.backup
+*.old
+*.orig
+*.save
+
+# Database Files
+*.sqlite
+*.sqlite3
+*.db
+*.mdb
+*.accdb
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual Environments
+.venv/
+venv/
+ENV/
+env/
+.virtualenv/
+virtualenv/
+.pyenv/
+pyenv/
+
+# UV (Rust-based Python package manager)
+.uv/
+.uv_cache/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff
+local_settings.py
+db.sqlite3-journal
+
+# Flask stuff
+instance/
+.webassets-cache
+
+# Scrapy stuff
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+docs/_static/
+docs/_templates/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# poetry
+poetry.lock
+
+# pdm
+.pdm.toml
+pdm.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments - track .env.example
+!.env.example
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# Ruff
+.ruff_cache/
+
+# LSP
+pyrightconfig.json
+
+# Terraform
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+*.tfplan
+*.tfvars
+!*.tfvars.example
+crash.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# OPA
+*.tar.gz
+bundle/
+
+# Project-specific: Generated reports
+reports/*.html
+reports/*.json
+reports/*.csv
+!reports/README.md
+!reports/.gitkeep
+
+# UV lock file
+uv.lock

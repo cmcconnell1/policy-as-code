@@ -1,0 +1,57 @@
+name: Scheduled Policy Report
+
+on:
+  schedule:
+    # Run every Monday at 9 AM UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  generate-weekly-report:
+    name: Generate Weekly Compliance Report
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install uv
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Generate compliance reports
+        run: |
+          mkdir -p reports
+
+          # Generate reports for different frameworks
+          for framework in sox pci-dss ffiec; do
+            echo "[OK] Generating $framework report..."
+            uv run python -m reporting.cli generate \
+              --input tests/test-fixtures/aws/s3-non-compliant.json \
+              --output reports \
+              --format html \
+              --scan-target "Weekly Compliance Scan"
+          done
+
+      - name: Upload reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: weekly-compliance-reports
+          path: reports/
+          retention-days: 90
+
+      # Optional: Send notification
+      - name: Create summary
+        run: |
+          echo "## Weekly Compliance Report" >> $GITHUB_STEP_SUMMARY
+          echo "Generated on: $(date)" >> $GITHUB_STEP_SUMMARY
+          echo "Reports available in artifacts" >> $GITHUB_STEP_SUMMARY

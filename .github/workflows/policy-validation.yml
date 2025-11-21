@@ -1,0 +1,111 @@
+name: Policy Validation
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  test-policies:
+    name: Test OPA/Rego Policies
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install OPA
+        run: |
+          curl -L -o opa https://openpolicyagent.org/downloads/latest/opa_linux_amd64
+          chmod +x opa
+          sudo mv opa /usr/local/bin/
+
+      - name: Verify OPA installation
+        run: opa version
+
+      - name: Run AWS policy tests
+        run: opa test policies/aws/ tests/aws/ -v
+
+      - name: Run Azure policy tests
+        run: opa test policies/azure/ tests/azure/ -v
+
+  lint-python:
+    name: Lint Python Code
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install uv
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Run ruff linter
+        run: uv run ruff check reporting/ scripts/
+
+  validate-terraform:
+    name: Validate Terraform Examples
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: '1.5.0'
+
+      - name: Terraform Init and Validate - Compliant
+        run: |
+          cd examples/aws/compliant
+          terraform init -backend=false
+          terraform validate
+
+  policy-report:
+    name: Generate Policy Report
+    runs-on: ubuntu-latest
+    needs: [test-policies]
+    if: github.event_name == 'pull_request'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install uv
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Generate sample report
+        run: |
+          uv run python -m reporting.cli generate \
+            --input tests/test-fixtures/aws/s3-non-compliant.json \
+            --output reports \
+            --format html --format json
+
+      - name: Upload report artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: policy-reports
+          path: reports/
+          retention-days: 30
