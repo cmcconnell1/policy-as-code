@@ -57,9 +57,14 @@ evaluate-fixture:  ## Evaluate test fixture and extract violations (no credentia
 	@echo "[OK] Violations saved to reports/violations.json"
 
 report:  ## Generate sample policy report
+	@echo "[OK] Evaluating test fixture..."
+	@mkdir -p reports
+	@opa eval -d policies/aws/ -i tests/test-fixtures/aws/s3-non-compliant.json 'data.aws' --format json | \
+		python3 scripts/extract-violations.py > reports/sample-violations.json
+	@echo "[OK] Found $$(python3 -c "import json; print(len(json.load(open('reports/sample-violations.json'))['violations']))" ) violations"
 	@echo "[OK] Generating sample report..."
 	uv run python -m reporting.cli generate \
-		--input tests/test-fixtures/aws/s3-non-compliant.json \
+		--input reports/sample-violations.json \
 		--output reports \
 		--format html --format json --format csv
 	@echo "[OK] Reports generated in reports/"

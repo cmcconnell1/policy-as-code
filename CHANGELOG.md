@@ -33,6 +33,8 @@ All notable changes to the policy-as-code framework.
 ### Fixed
 - GLBA test failures by adding required vendor compliance tags and CloudTrail resources to test fixtures
 - .gitignore now properly excludes reports/compliance/ subdirectory (was only excluding files directly in reports/)
+- `make report` target now correctly evaluates policies before generating reports (was passing raw Terraform JSON)
+- Reporting CLI now handles violations format from extract-violations.py script
 
 ## [1.0.0] - 2025-11-20
 

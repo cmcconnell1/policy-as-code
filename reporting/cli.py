@@ -67,8 +67,11 @@ def generate(input_file: Path, output_dir: Path, formats: tuple[str], scan_targe
     # Extract violations from OPA output
     violations = []
     if isinstance(data, dict):
+        # Handle violations output from extract-violations.py
+        if "violations" in data:
+            violations = data["violations"]
         # Handle conftest/OPA output format
-        if "results" in data:
+        elif "results" in data:
             for result in data["results"]:
                 for failure in result.get("failures", []):
                     violations.append({
